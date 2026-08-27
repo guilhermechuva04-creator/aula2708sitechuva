@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Obras | GC</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="app"><aside class="sidebar">
+<div class="side-brand"><div class="brand-icon">GC</div><div><strong>GC Gestão</strong><small>Obras & Projetos</small></div></div>
+<nav><a href="/dashboard.html">▦ <span>Dashboard</span></a><a class="active" href="/obras.html">⌂ <span>Obras</span></a><a href="/tarefas.html">✓ <span>Tarefas</span></a><a href="/financeiro.html">R$ <span>Financeiro</span></a></nav>
+<div class="side-bottom"><div class="online"></div><span>Sistema online</span><button id="logout">Sair</button></div></aside>
+<section class="content"><header class="topbar"><div><p class="eyebrow">GERENCIAMENTO</p><h1>Obras</h1></div><button class="primary-btn" id="openModal">+ Nova obra</button></header>
+<section class="panel"><div class="panel-head"><div><h2>Projetos cadastrados</h2><p>Crie, acompanhe e atualize suas obras.</p></div><input id="search" class="search" placeholder="Pesquisar obra..."></div><div class="table-wrap"><table><thead><tr><th>Obra</th><th>Cliente</th><th>Local</th><th>Status</th><th>Progresso</th><th>Ações</th></tr></thead><tbody id="projectsTable"></tbody></table></div></section></section></div>
+<div class="modal" id="modal"><div class="modal-card"><button class="close" id="closeModal">×</button><h2>Nova obra</h2><p>Cadastre um novo projeto.</p><form id="projectForm">
+<div class="form-grid"><label>Nome da obra<input name="name" required></label><label>Cliente<input name="client" required></label><label>Localização<input name="location" required></label><label>Status<select name="status"><option>Em andamento</option><option>Planejamento</option><option>Concluída</option><option>Paralisada</option></select></label><label>Progresso (%)<input name="progress" type="number" min="0" max="100" value="0"></label><label>Início<input name="start_date" type="date"></label><label>Previsão de término<input name="end_date" type="date"></label></div><button class="primary-btn full">Cadastrar obra</button></form></div></div>
+<script src="app.js"></script><script src="obras.js"></script></body></html>

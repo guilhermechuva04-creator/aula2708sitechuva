@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | GC Gestão de Obras</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="side-brand"><div class="brand-icon">GC</div><div><strong>GC Gestão</strong><small>Obras & Projetos</small></div></div>
+<nav>
+<a class="active" href="/dashboard.html">▦ <span>Dashboard</span></a>
+<a href="/obras.html">⌂ <span>Obras</span></a>
+<a href="/tarefas.html">✓ <span>Tarefas</span></a>
+<a href="/financeiro.html">R$ <span>Financeiro</span></a>
+</nav>
+<div class="side-bottom"><div class="online"></div><span>Sistema online</span><button id="logout">Sair</button></div>
+</aside>
+<section class="content">
+<header class="topbar"><div><p class="eyebrow">VISÃO GERAL</p><h1>Dashboard</h1></div><div class="user-pill"><span id="userName">Usuário</span><div class="avatar">GC</div></div></header>
+<div class="cards">
+<div class="stat"><span>Obras cadastradas</span><strong id="projectsCount">—</strong><small>Projetos no sistema</small></div>
+<div class="stat"><span>Obras concluídas</span><strong id="doneCount">—</strong><small>Entregas realizadas</small></div>
+<div class="stat"><span>Progresso médio</span><strong id="avgProgress">—</strong><small>Execução das obras</small></div>
+<div class="stat"><span>Despesas registradas</span><strong id="expenseTotal">—</strong><small>Controle financeiro</small></div>
+</div>
+<div class="grid-2">
+<section class="panel"><div class="panel-head"><div><h2>Obras recentes</h2><p>Acompanhe a evolução dos projetos.</p></div><a class="outline-btn" href="/obras.html">Ver obras</a></div><div id="projectList" class="project-list"></div></section>
+<section class="panel"><div class="panel-head"><div><h2>Resumo operacional</h2><p>Status atual da operação.</p></div></div><div class="summary"><div><span>Obras em andamento</span><b id="running">—</b></div><div><span>Obras em planejamento</span><b id="planning">—</b></div><div><span>Tarefas pendentes</span><b id="tasks">—</b></div><div><span>Banco de dados</span><b class="ok">Conectado</b></div></div></section>
+</div>
+</section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

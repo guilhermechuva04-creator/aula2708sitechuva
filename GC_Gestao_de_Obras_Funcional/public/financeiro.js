@@ -1,0 +1,5 @@
+const ps=document.getElementById("projectSelect"), list=document.getElementById("expensesList");
+async function load(){const [p,e]=await Promise.all([fetch("/api/projects").then(r=>r.json()),fetch("/api/expenses").then(r=>r.json())]);ps.innerHTML=p.map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join("");list.innerHTML=e.map(x=>`<div class="expense"><div class="expense-head"><div><strong>${esc(x.description)}</strong><div class="muted">${esc(x.project_name)} · ${esc(x.category)} · ${x.expense_date}</div></div><div class="money">${money(x.amount)}</div></div><button class="actions danger" style="border:0;padding:6px 8px;border-radius:6px;margin-top:9px" onclick="delExpense(${x.id})">Excluir</button></div>`).join("")||"<p class='muted'>Nenhuma despesa cadastrada.</p>"}
+document.getElementById("expenseForm").onsubmit=async e=>{e.preventDefault();await fetch("/api/expenses",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(e.target)))});e.target.reset();load()};
+async function delExpense(id){if(confirm("Excluir esta despesa?")){await fetch("/api/expenses/"+id,{method:"DELETE"});load()}}
+load();

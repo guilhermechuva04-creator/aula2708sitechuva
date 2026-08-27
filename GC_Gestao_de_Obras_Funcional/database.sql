@@ -1,0 +1,5 @@
+-- Estrutura principal do banco GC Gestão de Obras
+CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE NOT NULL, password TEXT NOT NULL, name TEXT NOT NULL);
+CREATE TABLE projects (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, client TEXT NOT NULL, location TEXT NOT NULL, status TEXT NOT NULL, progress INTEGER NOT NULL, start_date TEXT, end_date TEXT);
+CREATE TABLE tasks (id INTEGER PRIMARY KEY AUTOINCREMENT, project_id INTEGER NOT NULL, title TEXT NOT NULL, responsible TEXT NOT NULL, status TEXT NOT NULL, due_date TEXT);
+CREATE TABLE expenses (id INTEGER PRIMARY KEY AUTOINCREMENT, project_id INTEGER NOT NULL, description TEXT NOT NULL, category TEXT NOT NULL, amount REAL NOT NULL, expense_date TEXT NOT NULL);
